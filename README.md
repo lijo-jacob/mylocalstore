@@ -13,4 +13,8 @@ mkdir data
 
 mongod --dbpath ./data
 
+mongo
+> use mls
+> exit
+
 mvn spring-boot:run
