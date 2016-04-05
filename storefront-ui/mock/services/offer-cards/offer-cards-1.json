@@ -1,0 +1,36 @@
+{
+	"title" : "Offers",
+	"offers" : 
+		[
+			{
+				"name" : "Dell Streak 7", 
+				"image" : "offer-cards/refer_and_earn.png", 
+				"shortDescription" : "Introducing Dell\u2122 Streak 7."
+			},
+			{
+				"name" : "Motorola Atrix", 
+				"image" : "offer-cards/kindle.png", 
+				"shortDescription" : "MOTOROLA ATRIX 4G gives you dual-core processing power"
+			},
+			{
+				"name" : "Nexus S", 
+				"image" : "offer-cards/acer_wifi.png", 
+				"shortDescription" : "Nexus S is the next generation of Nexus devices."
+			},
+			{
+				"name" : "Samsung Gem", 
+				"image" : "offer-cards/one_touch.png", 
+				"shortDescription" : "Introducing Samsung Gem."
+			},
+			{
+				"name" : "Motorola XOOM with WiFi", 
+				"image" : "offer-cards/power_banks.png", 
+				"shortDescription" : "Introducing Motorola XOOM with WiFi."
+			},
+			{
+				"name" : "LG Axis", 
+				"image" : "offer-cards/watches.png", 
+				"shortDescription" : "Introducing LG Axis."
+			}
+		]
+}

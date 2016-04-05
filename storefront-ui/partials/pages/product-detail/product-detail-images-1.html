@@ -1,0 +1,15 @@
+<div class="prodct-detail-main ratio" data-ng-if="currentImage" style="background-image:url('{{image_server_url}}product/{{currentImage.thumbnail}}.jpg')" >
+</div>
+
+<div class="prodct-detail-main ratio" data-ng-if="!currentImage" style="background-image:url('{{image_server_url}}product/{{productDocument.productImages[0].thumbnail}}.jpg')" >
+</div>
+
+
+<div class="row-fluid" style="margin: 10px">
+	<div class="col-xs-2" data-ng-repeat="image in productDocument.productImages track by $index">
+		<a href data-ng-click="setCurrentImage(image)">
+			<div class="prodct-detail-thumbnails ratio" style="background-image:url('{{image_server_url}}product/{{image.thumbnail}}.jpg')" >
+			</div>
+		</a>
+	</div>
+</div>

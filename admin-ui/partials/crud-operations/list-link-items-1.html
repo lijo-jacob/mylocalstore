@@ -1,0 +1,45 @@
+<div class="container-fluid">
+	<h3>{{linkName | camelCaseToHuman}}</h3>
+	<div class="box effect8">		
+	  <div class="row header" >
+	  	<div class="col-md-2" >
+	  		ID
+		  </div>
+		  <div class="col-md-2" data-ng-repeat="propertyName in repositorySchema.itemListingProperties">
+		  	{{repositorySchema.properties[propertyName].description}}
+		  </div>
+	  </div>
+	  <div class="row" data-ng-repeat="linkRepositoryItem in linkRepositoryItems| filter:query | orderBy:orderProp" data-ng-class-odd="'oddRow'" data-ng-class-even="'evenRow'">
+	   	<div class="col-md-2" >
+		  	<a data-ui-sref="crud.edit({repositoryName: linkRepositoryName, repositoryItemId: linkRepositoryItem.id})" >
+		       	{{linkRepositoryItem.id}}
+		   	</a>
+	   	</div>
+	    <div class="col-md-2" data-ng-repeat="propertyName in repositorySchema.itemListingProperties" >
+	    	<span data-ng-if="repositorySchema.properties[propertyName].type == 'date'">
+	        	{{linkRepositoryItem[propertyName] | date:'MM/dd/yyyy'}}
+	        </span>
+	        <span data-ng-if="repositorySchema.properties[propertyName].type != 'date'">
+	        	{{linkRepositoryItem[propertyName]}}
+	        </span>
+	    </div>
+	    <div class="col-md-1">
+	    	<a href data-ng-click="removeItemFromList($index, linkRepositoryItem.id)" ><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
+	    </div>
+	    <div class="col-md-1">
+	    	<input type="checkbox" data-ng-model="linkRepositoryItem.removeFromList" data-ng-true-value="'true'" data-ng-false-value="'false'"></input>
+	    </div>
+	    
+	  </div>
+  </div>
+  <br/>
+ 	<a data-ui-sref="crud.create({repositoryName: linkRepositoryName})" class="btn btn-primary">Create {{linkRepositoryName | camelCaseToHuman}}</a>
+	<a href data-ng-click="removeSelectedItemsFromLink()" class="btn btn-danger">Remove selected {{linkRepositoryName | camelCaseToHuman}}</a>
+  
+</div>
+
+
+
+
+
+ 

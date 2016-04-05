@@ -1,0 +1,18 @@
+.navbar-custom {
+	background-color: #0C480A;
+    border-color: #0C480A;
+    color: #FFFFFF;
+}
+
+.navbar-custom .navbar-left {
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.navbar-custom .navbar-nav > li > a {
+	color: #FFFFFF;
+}
+
+.navbar-custom .navbar-nav > li > a:HOVER {
+	color: #FFFFFF;
+}

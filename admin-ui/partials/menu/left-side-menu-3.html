@@ -1,0 +1,31 @@
+<div class="sidebar-nav">
+    <nav class="navbar navbar-default" data-role="navigation">
+	
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-ng-click="leftNavbarCollapsed = !leftNavbarCollapsed" data-ng-init="leftNavbarCollapsed=true">
+				<span class="sr-only">Toggle navigation</span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span>
+			</button>
+			<span class="navbar-brand">Navigation</span>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" data-collapse="leftNavbarCollapsed">
+			<div class="repository-search">
+				<span class="glyphicon glyphicon-search search-icon"></span>
+				<input class="search-query" placeholder="Filter repository" ng-focus="focus=true" ng-blur="focus=false" ng-model="query" autocomplete="off" type="text">
+			</div>
+			<ul class="nav navbar-nav">
+				<li data-ui-sref-active="active"><a data-ui-sref="home">Home</a></li>
+				<li data-ui-sref-active="active"><a data-ui-sref="indexing">Indexing Admin</a></li>
+				<li data-ng-repeat="(repositoryName, repository) in repositories | repositoryFilter:query" data-ui-sref-active="active"><a data-ui-sref="crud({repositoryName : repositoryName})">{{repositoryName | camelCaseToHuman}}</a></li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</nav>
+	
+</div>
+

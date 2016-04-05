@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" data-ng-app="mlsApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="cache-control" content="max-age=0" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+	<meta http-equiv="pragma" content="no-cache" />
+  <title>mylocalstore</title>
+  <link rel="shortcut icon" href="/images/app/Shopping_Cart-256.png">
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+<!--   <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.css"> -->
+<!-- <link rel="stylesheet" href="thirdparty/cssplay/catalog-menu.css" type="text/css" charset="utf-8" /> -->
+
+<!-- <link rel="stylesheet" href="thirdparty/vertical-menu-1/vertical-menu-1.css" type="text/css" charset="utf-8" /> -->
+	<link rel="stylesheet" type="text/css" href="css/navbar-custom-1.css" />
+  <link rel="stylesheet" type="text/css" href="css/mls.css" />
+  <link rel="stylesheet" type="text/css" href="css/signup-2.css" />
+  <link rel="stylesheet" type="text/css" href="css/submenu.css" />
+  <link rel="stylesheet" href="thirdparty/product-preview-slider/reset.css"> <!-- CSS reset -->
+  <link rel="stylesheet" href="thirdparty/product-preview-slider/style.css"> <!-- Resource style -->
+  <link rel="stylesheet" href="thirdparty/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="thirdparty/animate.css">
+  
+  <script src="thirdparty/jquery.js"></script>
+  <script src="thirdparty/jquery.mobile.min.js"></script>
+  <script src="thirdparty/modernizr.js"></script>
+  <script src="thirdparty/product-preview-slider/main.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="thirdparty/ui-bootstrap-tpls-0.12.0.js"></script>
+  <script src="thirdparty/angular-ui-router.js"></script>
+  <script src="thirdparty/angular-breadcrumb.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/controllers/browse-search.js"></script>
+  <script src="js/controllers/user-profile.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="js/mls.js"></script>
+  
+</head>
+<body data-ng-controller="MainBodyController" class="view-body">
+
+	<div class="view-container">
+	  	<div> 
+			<top-nav></top-nav>
+		</div>
+		<div id="mls-mainbody-id"> 
+			<div class="container-fluid">
+				<div data-ui-view class="view-frame animated fadeIn" >
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<footer class="footer text-center">
+      <div class="container">
+        <p class="text-muted">Copyright Lijo Jacob @ mylocalstore.com</p>
+      </div>
+    </footer>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="thirdparty/ng-infinite-scroll.js"></script>
+    <script src="thirdparty/bootstrap.js"></script>
+    <script src="thirdparty/jquery.bootstrap-autohidingnavbar.js"></script>
+	<script>
+		$("nav.navbar-fixed-top").autoHidingNavbar();
+		$(document).ready(function () {
+		    $('form input').tooltip({
+		      placement: 'top',
+		      trigger: 'focus',
+		      title: function (){
+		        return $(this).attr('placeholder');
+		      }
+		    });
+		});
+	</script>
+
+</body>
+</html>
+			

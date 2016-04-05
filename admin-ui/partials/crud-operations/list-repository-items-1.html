@@ -1,0 +1,53 @@
+<div class="container-fluid">
+
+	<div class="form-group box effect8">
+  	  	<div class="input-group">
+	      <input type="text" class="form-control" placeholder="Search for {{repositorySchema.name}}" name="searchTerms" data-ng-model="searchTerms" >
+	      <span class="input-group-btn">
+	        <button class="btn btn-default" type="button" ng-click="search()">Go!</button>
+	      </span>
+	    </div><!-- /input-group -->
+  	</div>
+
+	<div class="box effect8">	
+	  <div class="row header" >
+	  	<div class="col-md-3" >
+	  		ID
+		  </div>
+		  <div class="col-md-2" data-ng-repeat="propertyName in repositorySchema.itemListingProperties">
+		  	<span ng-show="repositorySchema.properties[propertyName].description">{{repositorySchema.properties[propertyName].description}}</span>
+		  	<span ng-show="!repositorySchema.properties[propertyName].description">{{propertyName | camelCaseToHuman}}</span>
+		  </div>
+	  </div>
+	  <div class="row" data-ng-repeat="repositoryItem in repositoryItems| filter:query | orderBy:orderProp" data-ng-class-odd="'oddRow'" data-ng-class-even="'evenRow'">
+	   <div class="col-md-3" >
+		  	<a ui-sref="crud.edit({'repositoryItemId': repositoryItem.id})">
+		       	{{repositoryItem.id}}
+		   	</a>
+	   	</div>
+	    <div class="col-md-2" data-ng-repeat="propertyName in repositorySchema.itemListingProperties" >
+	    	<span data-ng-if="repositorySchema.properties[propertyName].type == 'date'">
+	        	{{repositoryItem[propertyName] | date:'MM/dd/yyyy'}}
+	        </span>
+	        <span data-ng-if="repositorySchema.properties[propertyName].type != 'date'">
+	        	{{repositoryItem[propertyName]}}
+	        </span>
+	    </div>
+	    <div class="col-md-1">
+	    	<a href data-ng-click="removeItem($index, repositoryItem.id)" ><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
+	    </div>
+	  </div>
+	</div>
+	<div paging
+         page="currentPage" 
+         page-size="pageSize" 
+         total="totalResults"
+         paging-action="DoCtrlPagingAct('Paging Clicked', page)">
+     </div>
+	<div class="text-center">
+		<a ui-sref="crud.create" class="btn btn-primary">Create {{repositoryName | camelCaseToHuman}}</a>
+		
+	</div>
+
+</div>
+

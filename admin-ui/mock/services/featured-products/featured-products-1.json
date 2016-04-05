@@ -1,0 +1,36 @@
+{
+	"title" : "New Arrivals in Phones",
+	"products" : 
+		[
+			{
+				"name" : "Dell Streak 7", 
+				"image" : "phones/dell-streak-7.0.jpg", 
+				"shortDescription" : "Introducing Dell\u2122 Streak 7."
+			},
+			{
+				"name" : "Motorola Atrix", 
+				"image" : "phones/motorola-atrix-4g.0.jpg", 
+				"shortDescription" : "MOTOROLA ATRIX 4G gives you dual-core processing power"
+			},
+			{
+				"name" : "Nexus S", 
+				"image" : "phones/nexus-s.0.jpg", 
+				"shortDescription" : "Nexus S is the next generation of Nexus devices."
+			},
+			{
+				"name" : "Samsung Gem", 
+				"image" : "phones/samsung-gem.0.jpg", 
+				"shortDescription" : "Introducing Samsung Gem."
+			},
+			{
+				"name" : "Motorola XOOM with WiFi", 
+				"image" : "phones/motorola-xoom-with-wi-fi.0.jpg", 
+				"shortDescription" : "Introducing Motorola XOOM with WiFi."
+			},
+			{
+				"name" : "LG Axis", 
+				"image" : "phones/lg-axis.0.jpg", 
+				"shortDescription" : "Introducing LG Axis."
+			}
+		]
+}

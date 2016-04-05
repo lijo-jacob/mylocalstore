@@ -1,0 +1,286 @@
+.view-body {
+	background-color: #FFFFFF;
+}
+
+.container-fluid {
+	margin-top: 100px	
+}
+
+.footer {
+	padding: 70px;
+}
+
+.logo {
+	width: 400px;
+	height: 50px;
+}
+
+.login-register-buttons {
+	font-weight: bold;
+}
+
+.well {
+  background-color: #FFFFFF;
+}
+
+.navbar {
+	margin-bottom: 0px
+}
+.navbar-default {
+  background-color: #147A11;
+  border-color: #147A11;
+  color: #147A11;
+  text-color: #FFFFFF;
+}
+
+.navbar-brand {
+	padding: 5px;
+}
+
+.navbar-catalog {
+    background-color: #0C480A;
+    border-color: #0C480A;
+    color: #0C480A;
+    text-color: #FFFFFF;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	background-color: #FFFFFF;
+  	border-color: #e7e7e7;
+  	color: #FFFFFF;
+}
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+#mls-mainbody-id {
+/*     background: url('../images/background/20141009-115730-diwali-bg-new.png') repeat-x scroll 0px -21px #FAF8D2; */
+background-color: #FFFFFF;
+padding-top: 60px; 
+}
+
+.featured-category {
+    border: 0 none;
+    box-shadow: none;
+    padding: 0px;
+    max-height: 200px;
+    align-content: space-around;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.banner {
+	padding: 0px;
+	border: 0px;
+}
+
+.mls-featured-cat-carousel-control {
+	width: 2%;
+}
+
+.mls-featured-cat-thumbnail {
+	border: 0 none;
+}
+
+.mls-featured-cat-header {
+	background-image: url("../images/app/20140913-142118-homepage-section-header-bg.png");
+	background-repeat: repeat-x;
+	border: none !important;
+	height: 43px;
+}
+
+.mls-featured-cat-thumbnail > img, .mls-featured-cat-thumbnail a > img {
+	max-height: 85px;
+	min-height: 85px;
+	max-width: 125px;
+	border: 0px;
+}
+
+.mls-search-bar-icon {
+    background: url("images/app/new-vd-sprite-08c177e8.png") no-repeat scroll 0 -202px rgba(0, 0, 0, 0);
+    height: 22px;
+    left: 8px;
+}
+
+.mls-search-bar-submit {
+    color: #FFFFFF;
+    width: 0%;
+    border: 0;
+}
+
+
+
+.navbar-form {
+	text-align: center;
+}
+
+.dropdown-menu {
+	text-align: left;
+}
+
+
+
+
+
+
+/* app css stylesheet */
+
+body {
+  padding-top: 20px;
+}
+
+
+.phone-images {
+  background-color: white;
+  width: 450px;
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+  float: left;
+}
+
+.phones {
+  list-style: none;
+}
+
+.thumb {
+  float: left;
+  margin: -0.5em 1em 1.5em 0;
+  padding-bottom: 1em;
+  height: 100px;
+  width: 100px;
+}
+
+.phones li {
+  clear: both;
+  height: 115px;
+  padding-top: 15px;
+}
+
+/** Detail View **/
+img.phone {
+  float: left;
+  margin-right: 3em;
+  margin-bottom: 2em;
+  background-color: white;
+  padding: 2em;
+  height: 400px;
+  width: 400px;
+  display: none;
+}
+
+img.phone:first-child {
+  display: block;
+}
+
+ul li.facet {
+	display: inline-block;
+	margin: 10px 10px;
+	white-space: pre;
+}
+
+ul.phone-thumbs {
+  margin: 0;
+  list-style: none;
+}
+
+ul.phone-thumbs li {
+  border: 1px solid black;
+  display: inline-block;
+  margin: 1em;
+  background-color: white;
+}
+
+ul.phone-thumbs img {
+  height: 100px;
+  width: 100px;
+  padding: 1em;
+}
+
+ul.phone-thumbs img:hover {
+  cursor: pointer;
+}
+
+
+ul.specs {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.specs > li{
+  display: inline-block;
+  width: 200px;
+  vertical-align: top;
+}
+
+ul.specs > li > span{
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+ul.specs dt {
+  font-weight: bold;
+}
+
+h1 {
+  border-bottom: 1px solid gray;
+}
+
+#searchcategory { /* Dropdown within searchbar */
+	width: 100px;
+	color: #333;
+	background-color: #e6e6e6;
+	border-color: #adadad;
+}
+
+.left-align-text {
+	text-align: left;
+}
+
+.search-button {
+	background-color: #333;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.product-list .row-fluid {
+    margin-bottom: 20px;
+}
+
+.shop-single-product.thumbnail {
+	width: 200px;
+	height: 200px;
+}
+
+/* .product-detail-main.thumbnail { */
+/* 	width: 300px; */
+/* } */
+
+/* .prodct-detail-thumbnails.thumbnail { */
+/* 	width: 100px; */
+/* 	height: 100px; */
+/* } */
+
+
+.prodct-detail-thumbnails.ratio{
+    position:relative;
+    width: 50px;
+    height: 0px;
+    padding-bottom: 50px ; /* % of width, defines aspect ratio*/
+    
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;  
+}
+
+.prodct-detail-main.ratio{
+    position:relative;
+    width: 400px;
+    height: 0px;
+    padding-bottom: 400px ; /* % of width, defines aspect ratio*/
+    
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;  
+}

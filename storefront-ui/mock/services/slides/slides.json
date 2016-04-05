@@ -1,0 +1,17 @@
+[
+{
+  "image": "carousel/sports_shoes.JPG",
+  "text": "Shoes1",
+  "active" : true
+},
+{
+  "image": "carousel/store-front-banner-131114-1170x300.jpg",
+  "text": "Shoes2",
+  "active" : false
+},
+{
+  "image": "carousel/skirts.jpg",
+  "text": "Shoes3",
+  "active" : false
+}
+]

@@ -1,0 +1,21 @@
+package com.lijojacob.mls.productcatalog.dto;
+
+import java.util.List;
+import java.util.Map;
+
+import lombok.Data;
+
+public @Data class CategoryDTO {
+	
+	private String id;
+	
+	private String displayName;
+	
+	private Map<String, String> media;
+	
+	private List<CategoryDTO> subCategories;
+	
+	private List<ProductDTO> products;
+	
+
+}

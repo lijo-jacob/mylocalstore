@@ -1,0 +1,46 @@
+{
+	"name" : "Fashion",
+	"subcategories" : 
+		[
+			{
+				"name" : "Jackets", 
+				"image" : "product/fashion/jacket-1.jpg", 
+				"shortDescription" : "Introducing Dell\u2122 Streak 7."
+			},
+			{
+				"name" : "Shorts", 
+				"image" : "product/fashion/shorts-1.jpg", 
+				"shortDescription" : "MOTOROLA ATRIX 4G gives you dual-core processing power"
+			},
+			{
+				"name" : "Pants", 
+				"image" : "product/fashion/pants-1.jpg", 
+				"shortDescription" : "Nexus S is the next generation of Nexus devices."
+			},
+			{
+				"name" : "Mens Shoes", 
+				"image" : "product/fashion/shoes-1.jpg", 
+				"shortDescription" : "Introducing Samsung Gem."
+			},
+			{
+				"name" : "Belts", 
+				"image" : "product/fashion/belt-1.jpg", 
+				"shortDescription" : "Introducing Motorola XOOM with WiFi."
+			},
+			{
+				"name" : "Kids Frock", 
+				"image" : "product/fashion/kids-frock-1.jpg", 
+				"shortDescription" : "Introducing LG Axis."
+			},
+			{
+				"name" : "Ladies Shirts", 
+				"image" : "product/fashion/shirt-ladies-1.jpg", 
+				"shortDescription" : "Introducing Motorola XOOM with WiFi."
+			},
+			{
+				"name" : "Ladies Shoes", 
+				"image" : "product/fashion/shoes-ladies-1.jpg", 
+				"shortDescription" : "Introducing Motorola XOOM with WiFi."
+			}
+		]
+}

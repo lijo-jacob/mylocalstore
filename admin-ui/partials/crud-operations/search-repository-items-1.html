@@ -1,0 +1,42 @@
+<div class="container-fluid">
+	<h3>{{repositorySchema.name}}</h3>
+
+	<div class="form-group box effect8">
+  	  	<div class="input-group">
+	      <input type="text" class="form-control" placeholder="Search for {{repositorySchema.name}}" name="searchTerms" data-ng-model="searchTerms" >
+	      <span class="input-group-btn">
+	        <button class="btn btn-default" type="button" ng-click="search()">Go!</button>
+	      </span>
+	    </div><!-- /input-group -->
+  	</div>
+	
+<div class="box effect8">		
+  <div class="row header" >
+  	<div class="col-md-3" >
+  		ID
+	  </div>
+	  <div class="col-md-2" data-ng-repeat="propertyName in repositorySchema.itemListingProperties">
+	  	{{repositorySchema.properties[propertyName].description}}
+	  </div>
+  </div>
+  <div class="row" data-ng-repeat="repositoryItem in repositoryItems| filter:query | orderBy:orderProp" data-ng-class-odd="'oddRow'" data-ng-class-even="'evenRow'">
+   <div class="col-md-3" >
+	  	<a data-ui-sref="crud.edit({repositoryName: repositoryName, repositoryItemId: repositoryItem.id})" >
+	       	{{repositoryItem.id}}
+	   	</a>
+   	</div>
+    <div class="col-md-2" data-ng-repeat="propertyName in repositorySchema.itemListingProperties" >
+    	<span data-ng-if="repositorySchema.properties[propertyName].type == 'date'">
+        	{{repositoryItem[propertyName] | date:'MM/dd/yyyy'}}
+        </span>
+        <span data-ng-if="repositorySchema.properties[propertyName].type != 'date'">
+        	{{repositoryItem[propertyName]}}
+        </span>
+    </div>
+  </div>
+  </div>
+</div>
+
+<br/>
+<a href="#/crud/{{repositoryName}}/new"><button>New {{repositorySchema.name | split:'.' | last}}</button></a>
+ 

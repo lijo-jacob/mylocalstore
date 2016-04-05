@@ -1,0 +1,12 @@
+<div>
+	<ul>
+		<li data-ng-repeat="(key, value) in searchResults.facets.results" >
+			<span class=".h5">{{key}}</span>
+			<ul>
+				<li data-ng-repeat="facetValue in value">
+					<a href ng-click="filterResults(key, facetValue.value)">{{facetValue.value}} ({{facetValue.count}})</a>
+				</li>
+			</ul>
+  		</li>
+	</ul>
+</div>

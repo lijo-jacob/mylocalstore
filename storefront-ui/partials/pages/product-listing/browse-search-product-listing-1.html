@@ -1,0 +1,29 @@
+<span class="h2" ng-show="searchResults.categoryName">{{searchResults.categoryName}}<br/></span>
+<span class="h2" ng-show="searchCriteria.searchTerm">Search Results for {{searchCriteria.searchTerm}}<br/></span>
+<br/>
+
+<div>
+	<ul data-ng-if="searchCriteria.filterCriteria.filters && searchCriteria.filterCriteria.filters.length > 0">
+		<li class="facet label label-info" data-ng-repeat="facet in searchCriteria.filterCriteria.filters"><a href data-ng-click="removeFilter(facet)"><i class="fa fa-times"></i></a>&nbsp;{{facet.name}}:{{facet.value}}</li>
+	</ul>
+</div>
+
+<div data-ng-if="searchCriteria.filterCriteria.filters && searchCriteria.filterCriteria.filters.length > 0">
+	<br/><br/>
+</div>
+
+<div infinite-scroll="nextPage()" infinite-scroll-disabled="busy" infinite-scroll-distance="1">
+    <div class="product-list clearfix">
+		<div class="row-fluid">
+           	<div class="col-md-3" data-ng-repeat="productDocument in searchResults.documents.results">
+           		<div class="shop-single-product thumbnail">
+           			<a ui-sref="product({productDocumentId : productDocument.id})">
+           				<img ng-src="{{image_server_url}}product/{{productDocument.productImages[0] | getImageType:', ':'thumbnail'}}.jpg" />      
+    					{{productDocument.productDisplayName}}
+    				</a>
+    			</div>
+    		</div>
+    		<div ng-show='busy'>Loading data...</div>
+    	</div>
+	</div>
+</div>

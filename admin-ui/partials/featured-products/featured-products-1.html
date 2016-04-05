@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+	<div class="panel-heading mls-featured-cat-header">
+		<h3 class="panel-title">{{featuredProducts.title}}</h3>
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-2" data-ng-repeat="product in featuredProducts.products">
+				<div class="thumbnail">
+					<img data-ng-src="{{image_server_url}}/{{product.image}}" alt="{{product.name}}">
+					<div class="caption text-center">{{product.name}}</div>
+				</div>
+			</div>			
+		</div>
+	</div>
+</div>

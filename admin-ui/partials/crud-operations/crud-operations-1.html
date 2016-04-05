@@ -1,0 +1,74 @@
+<div class="container">
+	<form name="crudForm" novalidate class="mls-form" ng-submit="save()" >
+  	  	<div class="row top-buffer" data-ng-repeat="(propertyName, property) in repositorySchema.properties | orderBy:'property.displayOrder'">
+			<div class="col-sm-3 text-right">
+		    	<label for="{{propertyName}}" class="control-label">{{property.description || propertyName | camelCaseToHuman}}:</label>
+	    	</div>
+	        <div class="col-sm-6 text-left">
+			    <input type="text" name="{{propertyName}}" class="form-control" data-ng-if="property.type == 'string' || property.type == 'integer' || property.type == 'float' || property.type == 'double' || property.type == 'int' " data-ng-model="repositoryItem[propertyName]" data-ng-required="property.required" />
+			    
+			    <div data-ng-if="property.type == 'date'" data-ng-controller="DatepickerCtrl" >
+			    	<input type="text" 
+			    	   class="form-control"
+				       data-datepicker-popup="dd-MMMM-yyyy"
+				       data-ng-model="repositoryItem[propertyName]"
+				       data-is-open="cdate.customStartDate.open"
+				       data-ng-click = "cdate.customStartDate.open = true"
+				       data-max-date="maxDate"
+				       data-datepicker-options="dateOptions"
+				       data-date-disabled="disabled(date, mode)" 
+				       data-close-text="Close"
+				       data-class="input-md" 
+				       data-ng-required="property.required"/>
+		        </div>
+		        <span data-ng-if="property.type == 'boolean'">
+			        <input type="radio" name="{{propertyName}}" data-ng-model="repositoryItem[propertyName]" data-ng-value="true" data-ng-required="property.required" />
+			        True
+			        <input type="radio" name="{{propertyName}}" data-ng-model="repositoryItem[propertyName]" data-ng-value="false" data-ng-required="property.required" />
+			        False
+		        </span>
+		        <span data-ng-if="property.enum" data-ng-repeat="enumValue in property.enumValues">
+			        <input type="radio" name="{{propertyName}}" data-ng-model="repositoryItem[propertyName]" data-ng-value="enumValue" data-ng-required="property.required" />
+			        {{enumValue}}
+		        </span>
+		        <span data-ng-if="property.type == 'array'">
+
+		        	<span data-ng-if="property.componentItemType == 'string'" data-ng-repeat="val in repositoryItem[propertyName] track by $index" >
+			        	<input type="text" data-ng-model="repositoryItem[propertyName][$index]" /><a href data-ng-click="deleteMultiValue(propertyName, $index)" >X</a>
+			        	<br />
+		        	</span>
+		        	<button data-ng-click="addTextBox(propertyName)" data-ng-if="property.componentItemType == 'string'" >Add</button>
+	<!-- 	        	<tags-input data-ng-model="repositoryItem[propertyName]" placeholder="" > -->
+	<!-- 	        	</tags-input> -->
+
+
+		        	
+					<div class="row-fluid" data-ng-if="property.componentItemType == 'image'" data-as-sortable data-ng-model="repositoryItem[propertyName]"> 
+						<div class="col-md-3" data-ng-repeat="image in repositoryItem[propertyName] track by $index" data-as-sortable-item>
+							<div class="productImage thumbnail" data-as-sortable-item-handle>
+						    	<a href data-ng-click="openImageModal('lg', propertyName, $index)"><img data-ng-src="{{image_server_url}}product/{{image.thumbnail}}.jpg"></a>
+						    	<a href data-ng-click="deleteMultiValue(propertyName, $index)" >X</a>
+					    	</div>
+						</div>
+						<button class="btn btn-default" data-ng-click="openImageModal('lg', propertyName)" data-ng-if="property.componentItemType == 'image'">Add Image</button>
+					</div>
+		        	
+		        </span>
+			</div>
+		</div>
+  
+		<div class="row top-buffer" data-ng-repeat="link in repositorySchema.links">
+	  		<div class="col-sm-3 text-right">
+		    	<label class="control-label">{{link.rel | camelCaseToHuman}}</label>
+	    	</div>
+	    	<div class="col-sm-6 text-left">
+	  			<a ui-sref="crud.edit.link({'linkName' : link.rel})" ><span class="glyphicon glyphicon-edit" aria-hidden="true">  Edit</span></a>
+	  		</div>
+		</div>
+  
+ 		<div class="text-center">
+ 			<button type="submit" class="btn btn-primary">Save {{repositorySchema.name | split:'.' | last | camelCaseToHuman}}</button>
+			<a href ng-click="deleteItem()" class="btn btn-danger" data-ng-if="repositoryItem.id != null">Delete {{repositorySchema.name | split:'.' | last | camelCaseToHuman}}</a>
+		</div>
+	</form>	
+</div>

@@ -1,0 +1,5 @@
+<div ng-controller="MessagesCtrl" class="box effect7">
+  <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)"><span class="glyphicon glyphicon-ok" data-ng-if="alert.type == 'success'"></span> <span class="glyphicon glyphicon-remove" data-ng-if="alert.type != 'success'"></span> {{alert.msg}}</alert>
+	<crud-operation></crud-operation>
+</div>
+

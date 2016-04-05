@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+	<div class="mls-featured-cat-header panel-heading ">
+		<h3 class="panel-title">{{featuredCategory.name}}</h3>
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-2" data-ng-repeat="subcategory in featuredCategory.subcategories | limitTo:6">
+				<div class="thumbnail">
+					<img data-ng-src="{{image_server_url}}/{{subcategory.image}}?width=150&height=220" alt="{{subcategory.name}}">
+					<div class="caption text-center">{{subcategory.name}}</div>
+				</div>
+			</div>			
+		</div>
+	</div>
+</div>

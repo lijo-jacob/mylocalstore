@@ -1,0 +1,12 @@
+<div class="jumbotron text-center">
+    <h1>{{repositoryName | camelCaseToHuman}}</h1>
+    <p>Create Read Update Delete {{repositoryName | camelCaseToHuman}}</p>  
+
+    <a ui-sref=".list" class="btn btn-primary">List {{repositoryName | camelCaseToHuman}}</a>
+    <a ui-sref=".create" class="btn btn-primary">Create {{repositoryName | camelCaseToHuman}}</a>
+    <a ui-sref=".upload" class="btn btn-primary">Upload {{repositoryName | camelCaseToHuman}}</a>
+</div>
+
+<div ui-view="repositoryItemListView" class="animated zoomIn" ></div>
+<div ui-view="repositoryItemView" class="animated zoomIn" ></div>
+<br/>

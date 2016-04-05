@@ -1,0 +1,56 @@
+<nav class="navbar navbar-custom" data-role="navigation">
+	
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-ng-click="catalogNavbarCollapsed = !catalogNavbarCollapsed" data-ng-init="catalogNavbarCollapsed=true">
+				<span class="sr-only">Toggle navigation</span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" data-collapse="catalogNavbarCollapsed">
+			
+			<ul class="nav navbar-nav navbar-left" >
+				<li class="dropdown" dropdown>
+					<a href class="dropdown-toggle" dropdown-toggle><b>Shop by Department</b>
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu multi-level" >
+						<li data-ng-repeat="rootCategory in catalog.rootCategories" class="dropdown-submenu">
+							<a data-ui-sref="category({categoryId : rootCategory.id})">{{rootCategory.displayName}}</a>							
+							<ul class="dropdown-menu" data-ng-if="rootCategory.subCategories.length > 0">
+								<li data-ng-repeat="subCategory in rootCategory.subCategories"><a data-ui-sref="category({categoryId : subCategory.id})">{{subCategory.displayName}}</a></li>
+							</ul>
+						</li>
+						<li class="divider"></li>
+						<li><a href="#">Full Store Directory</a></li>
+					</ul>
+				</li>
+			</ul>
+			
+			<form class="navbar-form" data-role="search">
+				<div class="form-group has-feedback">
+					<div class="input-group">
+						<div class="input-group-btn" dropdown>
+							<button type="button" id="searchcategory" value="ANY" class="btn btn-default dropdown-toggle" dropdown-toggle ><span class="pull-left">Any</span><span class="glyphicon glyphicon-menu-down pull-right"></span></button>
+				        	<ul id="searchdropdown" class="dropdown-menu" role="menu">
+						    	<li data-ng-repeat="rootCategory in catalog.rootCategories"><a href="javascript:void(0)">{{rootCategory.displayName}}</a></li>
+								<li class="divider"></li>
+						        <li><a href="javascript:void(0)">ANY</a></li>          
+					        </ul>
+						</div>
+						<input type="searchTerm" class="form-control" placeholder="Search for a product, category or brand" size="100" ng-model="searchTerm"/>
+						<span class="input-group-btn">
+							<a data-ui-sref="search({searchTerm : searchTerm})"><button class="btn btn-default" type="button">Search</button></a>
+						</span>
+					</div>
+				</div> 
+			</form>
+		</div>
+		
+		
+		<!-- /.navbar-collapse -->
+</nav>

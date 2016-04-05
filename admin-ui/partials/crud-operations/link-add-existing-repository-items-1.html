@@ -1,0 +1,46 @@
+<div class="container-fluid">
+
+	<div class="form-group box effect8">
+  	  	<div class="input-group">
+	      <input type="text" class="form-control" placeholder="Search for {{repositorySchema.name}}" name="searchTerms" data-ng-model="searchTerms" >
+	      <span class="input-group-btn">
+	        <button class="btn btn-default" type="button" ng-click="search()">Go!</button>
+	      </span>
+	    </div><!-- /input-group -->
+  	</div>
+
+	<div class="box effect8">	
+	  <div class="row header" >
+	  	<div class="col-md-3" >
+	  		ID
+		  </div>
+		  <div class="col-md-2" data-ng-repeat="propertyName in repositorySchema.itemListingProperties">
+		  	{{repositorySchema.properties[propertyName].description}}
+		  </div>
+	  </div>
+	  <div class="row" data-ng-repeat="searchResultRepositoryItem in searchResultRepositoryItems| filter:query | orderBy:orderProp" data-ng-class-odd="'oddRow'" data-ng-class-even="'evenRow'">
+	   <div class="col-md-3" >
+		  	<a ui-sref="crud.edit({'repositoryItemId': searchResultRepositoryItem.id})">
+		       	{{searchResultRepositoryItem.id}}
+		   	</a>
+	   	</div>
+	    <div class="col-md-2" data-ng-repeat="propertyName in repositorySchema.itemListingProperties" >
+	    	<span data-ng-if="repositorySchema.properties[propertyName].type == 'date'">
+	        	{{searchResultRepositoryItem[propertyName] | date:'MM/dd/yyyy'}}
+	        </span>
+	        <span data-ng-if="repositorySchema.properties[propertyName].type != 'date'">
+	        	{{searchResultRepositoryItem[propertyName]}}
+	        </span>
+	    </div>
+	    <div class="col-md-1">
+	    	<input type="checkbox" data-ng-model="searchResultRepositoryItem.addToList" data-ng-true-value="'true'" ></input>
+	    </div>
+	  </div>
+	</div>
+	<br/>
+	<div class="text-center">
+		<a data-ng-click="addSelectedItemsToLink();" class="btn btn-primary">Add selected {{linkRepositoryName | camelCaseToHuman}}</a>
+	</div>
+
+</div>
+

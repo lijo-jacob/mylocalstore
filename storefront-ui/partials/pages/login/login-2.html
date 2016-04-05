@@ -1,0 +1,61 @@
+<div id="contentContainer" class="container">
+
+  <div class="row">
+    <div id="realContent" class="col-xs-12">
+      <div class="row">
+        <section class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12 col-sm-offset-0">
+          <div class="well well-lg">
+            <div class="row">
+              <div class="col-sm-6 col-xs-12">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <ul id="social-sign-in" class="inline-block list-unstyled">
+                      <li><a target="_blank" href="#google" title="Sign in with Google" rel="nofollow"><i class="fa fa-google-plus-square fa-5x"></i></a></li>
+                      <li><a target="_blank" href="#twitter" title="Sign in with Twitter" rel="nofollow"><i class="fa fa-twitter-square fa-5x"></i></a></li>
+                      <li><a target="_blank" href="#facebook" title="Sign in with Facebook" rel="nofollow"><i class="fa fa-facebook-square fa-5x"></i></a></li>
+                      <li><a target="_blank" href="#linkedin" title="Sign in with LinkedIn" rel="nofollow"><i class="fa fa-linkedin-square fa-5x"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xs-12">
+                <div class="row">
+                  <div class="col-xs-12">
+                  	<form id="loginForm" name="loginForm" ng-submit="login()" role="form" accept-charset="UTF-8" ng-novalidate>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope fa-1x"></i></span>
+                        <input id="login" class="form-control input-sm" placeholder="Email" required="required" maxlength="100" type="text" name="login" ng-model="user.login" />
+                      </div>
+                      <br/>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-asterisk fa-1x"></i></span>
+                        <input id="password" class="form-control input-sm" placeholder="Password" required="required" maxlength="60" type="password" name="password" ng-model="user.password" />
+                      </div>
+                      <br/>
+                      <div class="input-group">
+                        <input id="rememberMe" type="checkbox" name="rememberMe" ng-model="user.rememberMe" />&nbsp;&nbsp;Remember me
+                      </div>
+                      <br/>
+                      <div class="form-group">
+                        <button type="submit" id="btn-login" class="btn btn-block btn-primary btn-sm">Login</button>
+                      </div>
+                    </form>
+                    <div class="form-group">
+                      <div class="topCushion">Not a member yet? <a href="#/signup">Sign up</a></div>
+                    </div>
+                  </div>
+                  <!-- end of column -->
+                </div>
+                <!-- end of row -->
+              </div>
+              <!-- end of column 2 -->
+            </div>
+            <!-- end of well row -->
+          </div>
+          <!-- end of well -->
+        </section>
+      </div>
+      <!-- end of row -->
+    </div>
+  </div>
+</div>
